@@ -1,0 +1,219 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+    margin: 0;
+    padding: 0;
+}
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+    border: 0;
+}
+li {
+    list-style: none;
+}
+textarea {
+    overflow: auto;
+    resize: none;
+}
+a,
+button {
+    cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+b {
+    font-weight: bold;
+}
+a,
+a:hover {
+    text-decoration: none;
+}
+body {
+    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi,
+        sans-serif;
+}
+
+a.btn {
+    display: block;
+    outline: none;
+}
+.fnOpacity (@opacity: 0) {
+    @tempOpacity: @opacity * 100;
+    -webkit-opacity: @opacity;
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+    filter: alpha(opacity= @tempOpacity);
+}
+.fnTransform (@prop) {
+    transform: @prop;
+    -ms-transform: @prop;
+    -webkit-transform: @prop;
+    -moz-transform: @prop;
+    -o-transform: @prop;
+}
+.fnTransformOrigin (@prop) {
+    transform-origin: @prop;
+    -ms-transform-origin: @prop;
+    -webkit-transform-origin: @prop;
+    -moz-transform-origin: @prop;
+    -o-transform-origin: @prop;
+}
+.fnTransition (@prop) {
+    transition: @prop;
+    -webkit-transition: @prop;
+    -moz-transition: @prop;
+    -o-transition: @prop;
+}
+.fnAnimation (@param) {
+    -moz-animation: @param;
+    -webkit-animation: @param;
+    -o-animation: @param;
+    -ms-animation: @param;
+    animation: @param;
+}
+.fnKeyframes (@name, @frames) {
+    @-webkit-keyframes @name {
+        @frames();
+    }
+    @-moz-keyframes @name {
+        @frames();
+    }
+    @-ms-keyframes @name {
+        @frames();
+    }
+    @-o-keyframes @name {
+        @frames();
+    }
+    @keyframes @name {
+        @frames();
+    }
+}
+
+.fnTextShadow (@param: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+    text-shadow: @param;
+}
+.fnBoxShadow (@param) {
+    -webkit-box-shadow: @param;
+    -moz-box-shadow: @param;
+    box-shadow: @param;
+}
+.fnDropShadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+    -webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.fnInnerShadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+    -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.fnBorderRadius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.fnBorderRadiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-top-right-radius: @topright;
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius: @bottomleft;
+    -webkit-border-top-left-radius: @topleft;
+
+    -moz-border-radius-topright: @topright;
+    -moz-border-radius-bottomright: @bottomright;
+    -moz-border-radius-bottomleft: @bottomleft;
+    -moz-border-radius-topleft: @topleft;
+
+    border-top-right-radius: @topright;
+    border-bottom-right-radius: @bottomright;
+    border-bottom-left-radius: @bottomleft;
+    border-top-left-radius: @topleft;
+
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.fnGradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(@startColor),
+        to(@endColor)
+    );
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -moz-linear-gradient(top, @startColor, @endColor);
+    background: -ms-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.fnHorizontalGradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(@startColor),
+        to(@endColor)
+    );
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -ms-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
+    background-image: linear-gradient(left, @startColor, @endColor);
+}
+.ant-table-body {
+    &::-webkit-scrollbar {
+        width: 3px;
+        height: 10px;
+        background: #fff; /*可以设置轨道颜色*/
+        padding-right: 2px;
+    }
+
+    /*滚动条*/
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
+}
